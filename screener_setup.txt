@@ -1,0 +1,10 @@
+* Query:
+Average 5years dividend > 0 AND
+Average dividend payout 3years > 0 AND
+Free cash flow 10years > 1 AND
+Operating cash flow 10years > 1 AND
+Debt to equity < 1 AND
+NPM preceding year > 0
+
+* Columns:
+P/E Ratio, Market Cap, YOY Quarterly Sales Growth, Sales Growth 3Y, Sales growth 10Y median, ROCE, Debt to Equity, Operating profit preceding yr, Profit growth 3Y, Profit growth 10Y, EPS last year, EPS growth 3Y, EPS growth 10Y, Dividend yield, Dividend Payout ratio, Dividend preceding year, Average dividend payout 3Y, Average 5Y dividend, Cash from operations preceding year, Operating cash flow 3Y, Operating cash flow 10Y, Free cash flow last year, Free cash flow 3Y, Free cash flow 10Y
