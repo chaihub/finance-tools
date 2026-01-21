@@ -63,8 +63,16 @@ python -m unittest tests.test_excel_processor
 ```
 
 ## Documentation
-- [Architecture Document](plans/excel_processor_architecture.md)
-- [Implementation Plan](plans/excel_processor_implementation_plan.md)
+- Calculation Elements v0
+  - Iteration unit
+  - Qualifiers (e.g. must-have, must-not-have, lookup)
+  - Computation (using numbers within the unit + elsewhere)
+  - Accumulation (add or subtract)
+  - Final result computation if any
+  - Validation or sanity checking
+  - Handling missing data (blank numbers; missing required elements such as qualifiers; missing units - making right assumptions and getting them validated)
+  - Handling comments / annotations (e.g. uncertainty, conditions, etc.)
+  - Logging
 
 ## License
 This project is licensed under the MIT License.

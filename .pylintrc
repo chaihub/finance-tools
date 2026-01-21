@@ -1,0 +1,2 @@
+[MASTER]
+init-hook='import sys; from pathlib import Path; import os; project_root = Path(os.getcwd()); sys.path.insert(0, str(project_root))'

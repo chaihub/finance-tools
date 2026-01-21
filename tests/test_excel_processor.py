@@ -1,13 +1,13 @@
-# tests/test_excel_processor.py
+"""Tests for the ExcelProcessor class."""
 
-import pytest
 import os
+import pytest
 from openpyxl import Workbook, load_workbook
 from src.excel_processor import ExcelProcessor
 
 
 @pytest.fixture
-def setup_test_file():
+def excel_file():
     """
     Set up the test environment.
     """
@@ -21,28 +21,28 @@ def setup_test_file():
     sheet["B2"] = 20
     workbook.save(test_file)
     yield test_file
-    
+
     # Clean up the test environment
     if os.path.exists(test_file):
         os.remove(test_file)
 
 
-def test_process(setup_test_file):
+def test_process(excel_file):  # pylint: disable=redefined-outer-name
     """
     Test the process method of ExcelProcessor.
     """
-    test_file = setup_test_file
+    test_file = excel_file
     processor = ExcelProcessor(test_file)
     calculations = {
         "Value1": "sum",
         "Value2": "average"
     }
     processor.process("Input", "Output", calculations)
-    
+
     # Verify the output sheet was created
     workbook = load_workbook(test_file)
     assert "Output" in workbook.sheetnames
-    
+
     # Verify the calculations
     output_sheet = workbook["Output"]
     assert output_sheet["B1"].value == 10  # Sum of Value1
